@@ -1,0 +1,60 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "A simple application for writing notes.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "ts-node ./src/server/index.ts",
+    "webpack": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrobrian/notes.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrobrian/notes/issues"
+  },
+  "homepage": "https://github.com/mrobrian/notes#readme",
+  "dependencies": {
+    "connected-react-router": "5.0.1",
+    "express": "4.16.4",
+    "moment": "2.22.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "5.1.1",
+    "react-router-dom": "4.3.1",
+    "redux": "4.0.1",
+    "redux-actions": "2.6.4",
+    "redux-saga": "0.16.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "3.1.15",
+    "@types/express": "4.16.0",
+    "@types/jest": "23.3.9",
+    "@types/node": "10.12.10",
+    "@types/react": "16.7.7",
+    "@types/react-dom": "16.0.10",
+    "@types/react-redux": "6.0.10",
+    "@types/react-router-dom": "4.3.1",
+    "@types/redux-actions": "2.3.1",
+    "css-loader": "1.0.1",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.7.0",
+    "html-webpack-plugin": "3.2.0",
+    "jest": "23.6.0",
+    "less": "3.8.1",
+    "less-loader": "4.1.0",
+    "mini-css-extract-plugin": "0.4.5",
+    "react-test-renderer": "16.6.3",
+    "redux-mock-store": "1.5.3",
+    "ts-jest": "23.10.5",
+    "ts-loader": "5.3.0",
+    "ts-node": "7.0.1",
+    "typescript": "3.1.6",
+    "webpack": "4.26.0",
+    "webpack-cli": "3.1.2"
+  }
+}
