@@ -30,6 +30,7 @@ render(
         <Route exact path='/' render={() => <Redirect to='/notes' />} />
         <Route path='/notes/:id' render={({ match }) => <div>Notes {match.params.id}</div>} />
         <Route path='/notes' render={() => <div>Notes</div>} />
+        <Route render={() => <div>Not found</div>} />
       </Switch>
     </ConnectedRouter>
   </Provider>,
