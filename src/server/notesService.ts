@@ -1,11 +1,6 @@
 import * as fs from 'fs';
 
-interface Note {
-  id: number | null;
-  created?: string;
-  updated?: string;
-  text: string;
-}
+import Note from '../common/types/note';
 
 let notes: Note[] | null = null;
 

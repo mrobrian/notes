@@ -22,7 +22,7 @@ app.get('/api/notes', async (_: express.Request, res: express.Response) => {
   res.end(JSON.stringify(await NotesService.getAll()));
 });
 app.post('/api/notes', async (req: express.Request, res: express.Response) => {
-  if (!req.body.text) {
+  if (typeof req.body.text !== 'string') {
     return res.status(400).end('Invalid request');
   }
   res.setHeader('Content-Type', 'application/json');
@@ -38,7 +38,7 @@ app.get('/api/notes/:id', async (req: express.Request, res: express.Response) =>
 });
 app.put('/api/notes/:id', async (req: express.Request, res: express.Response) => {
   const id = parseInt(req.params.id, 10);
-  if (isNaN(id) || !req.body.text) {
+  if (isNaN(id) || typeof req.body.text !== 'string') {
     return res.status(400).end('Invalid request');
   }
   try {
@@ -56,7 +56,7 @@ app.delete('/api/notes/:id', async (req: express.Request, res: express.Response)
   }
   try {
     await NotesService.remove(id);
-    res.end();
+    res.status(204).end();
   } catch (e) {
     res.status(500).end(`Internal Server Error: ${e}`);
   }

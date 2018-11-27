@@ -1,0 +1,22 @@
+.notesList {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  width: 300px;
+  overflow-y: auto;
+
+  a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid lightgray;
+
+    &.active {
+      background-color: lightblue;
+    }
+  }
+}

@@ -19,6 +19,9 @@ const config = {
     extensions: ['.ts', '.tsx', '.js', '.less']
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].css'
+    }),
     new HtmlWebpackPlugin({
       template: `${CLIENT_DIR}/index.html`
     })

@@ -8,6 +8,8 @@ import * as Redux from 'redux';
 import { Provider } from 'react-redux';
 
 import rootReducer from './rootReducer';
+import rootSaga from './rootSaga';
+import Notes from './components/notes';
 
 const composeEnhancers: (...enhanders: any[]) => any = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
 
@@ -23,13 +25,15 @@ const store = Redux.createStore(
   )
 );
 
+sagaMiddleware.run(rootSaga);
+
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path='/' render={() => <Redirect to='/notes' />} />
-        <Route path='/notes/:id' render={({ match }) => <div>Notes {match.params.id}</div>} />
-        <Route path='/notes' render={() => <div>Notes</div>} />
+        <Route path='/notes/:id' render={() => <Notes />} />
+        <Route path='/notes' render={() => <Notes />} />
         <Route render={() => <div>Not found</div>} />
       </Switch>
     </ConnectedRouter>
