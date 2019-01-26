@@ -6,7 +6,7 @@ const BUILD_DIR = path.resolve(__dirname, './build');
 const CLIENT_DIR = path.resolve(__dirname, './src/client');
 
 const config = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: `${CLIENT_DIR}/index.tsx`
   },

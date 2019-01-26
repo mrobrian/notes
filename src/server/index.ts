@@ -1,6 +1,7 @@
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
+import * as compression from 'compression';
 
 import * as NotesService from './notesService';
 
@@ -14,7 +15,7 @@ if (process.argv.length > 2) {
 }
 
 const app = express();
-
+app.use(compression());
 app.use(bodyParser.json());
 
 app.get('/api/notes', async (_: express.Request, res: express.Response) => {
