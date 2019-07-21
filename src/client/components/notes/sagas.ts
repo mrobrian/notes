@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery, AllEffect, Effect } from 'redux-saga/effects';
+import { all, call, put, takeEvery, AllEffect, Effect, ForkEffect } from 'redux-saga/effects';
 
 import {
   NOTES_LIST_GET,
@@ -35,7 +35,7 @@ function* updateNote(action: ActionMeta<number, string>): IterableIterator<Effec
   yield put(noteUpdateSuccess(result));
 }
 
-export default function* sagas(): IterableIterator<AllEffect> {
+export default function* sagas(): IterableIterator<AllEffect<ForkEffect>> {
   yield all([
     takeEvery(NOTES_LIST_GET, getNotesList),
     takeEvery(NOTE_DELETE, deleteNote),
